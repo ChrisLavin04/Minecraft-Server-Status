@@ -1,0 +1,45 @@
+<div class="server-display" *ngIf="serverStatus">
+    <div class="server-title">
+      <h2>{{ serverStatus.hostname || 'Unknown Server' }}</h2>
+      <div class="status-indicator" [ngClass]="{'online': serverStatus.online, 'offline': !serverStatus.online}">
+        {{ serverStatus.online ? 'Online' : 'Offline' }}
+        <button (click)="addToFavourites()">Add to Favourites</button>
+      </div>
+    </div>
+  
+    <div class="server-details">
+      <div class="server-info">
+        <p *ngIf="serverStatus.ip"><strong>IP:</strong> {{ serverStatus.ip }}</p>
+        <p *ngIf="serverStatus.port"><strong>Port:</strong> {{ serverStatus.port }}</p>
+        <p *ngIf="serverStatus.version"><strong>Version:</strong> {{ serverStatus.version }}</p>
+        <p *ngIf="serverStatus.software"><strong>Software:</strong> {{ serverStatus.software }}</p>
+        
+        <div class="spacer"></div>
+        
+        <div *ngIf="serverStatus.players">
+          <p><strong>Players:</strong> {{ serverStatus.players.online }} / {{ serverStatus.players.max }}</p>
+          
+          <div *ngIf="serverStatus.players.list && serverStatus.players.list.length > 0" class="player-list">
+            <p><strong>Online Players:</strong></p>
+            <ul>
+              <li *ngFor="let player of serverStatus.players.list">{{ player.name }}</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        <div *ngIf="serverStatus.motd">
+          <p><strong>Message of the Day:</strong></p>
+          <div *ngFor="let line of serverStatus.motd.clean" class="motd-line">{{ line }}</div>
+        </div>
+      </div>
+      
+      <div class="server-image">
+        <img *ngIf="serverStatus.icon" [src]="serverStatus.icon" alt="Server icon">
+        <div *ngIf="!serverStatus.icon" class="placeholder-image">
+          Server Icon Not Available
+        </div>
+      </div>
+    </div>
+  </div>

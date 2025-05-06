@@ -1,0 +1,33 @@
+<div class="search-container">
+    <div class="header">
+      <h1>Minecraft Server Status Checker</h1>
+    </div>
+    <div class="search-form">
+      <div class="input-group">
+        <label for="serverAddress">Search Server</label>
+        <input type="text" id="serverAddress" placeholder="Enter server name (e.g., 2b2t, hypixel, mineplex)" [(ngModel)]="serverAddress">
+      </div>
+      <div class="button-group">
+        <button (click)="searchByTerm()" class="search-button" [disabled]="searchInProgress">
+          <span *ngIf="!searchInProgress">Find Server</span>
+          <span *ngIf="searchInProgress">Searching...</span>
+        </button>
+        <button (click)="searchJava()" [disabled]="searchInProgress">Direct Java Lookup</button>
+        <button (click)="searchBedrock()" [disabled]="searchInProgress">Direct Bedrock Lookup</button>
+      </div>
+    </div>
+    
+    <div *ngIf="searchInProgress" class="loading-indicator">
+      <p>Searching for servers matching "{{serverAddress}}"...</p>
+    </div>
+    
+    <div *ngIf="errorMessage" class="error-message">
+      <p>{{errorMessage}}</p>
+    </div>
+      
+    <div *ngIf="discoveredAddress && serverStatus" class="discovery-info">
+      <p>Found server: <strong>{{discoveredAddress}}</strong> ({{serverType}} edition)</p>
+    </div>
+  
+    <app-server-display *ngIf="serverStatus" [serverStatus]="serverStatus"></app-server-display>
+  </div>

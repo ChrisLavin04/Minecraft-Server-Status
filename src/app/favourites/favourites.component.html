@@ -1,0 +1,9 @@
+<div>
+    <h2>Favourites</h2>
+    <ul>
+      <li *ngFor="let favourite of favourites">
+        {{ favourite.serverName }} - {{ favourite.serverAddress }}
+        <button (click)="deleteFavourite(favourite._id)">Delete</button>
+      </li>
+    </ul>
+  </div>
