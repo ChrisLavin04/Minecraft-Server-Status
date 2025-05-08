@@ -1,5 +1,5 @@
-/*import { Component, OnInit } from '@angular/core';
-import { FavouritesService } from '../services/favourites.service';
+import { Component, OnInit } from '@angular/core';
+import { FavouritesService } from './favourites.service';
 
 @Component({
   selector: 'app-favourites',
@@ -16,14 +16,24 @@ export class FavouritesComponent implements OnInit {
   }
 
   loadFavourites(): void {
-    this.favouritesService.getFavourites().subscribe(data => {
-      this.favourites = data;
+    this.favouritesService.getFavourites().subscribe({
+      next: (data) => {
+        this.favourites = data;
+      },
+      error: (err) => {
+        console.error('Error fetching favourites:', err);
+      }
     });
   }
 
   deleteFavourite(id: string): void {
-    this.favouritesService.deleteFavourite(id).subscribe(() => {
-      this.loadFavourites();
+    this.favouritesService.deleteFavourite(id).subscribe({
+      next: () => {
+        this.loadFavourites(); // Reload the list after deletion
+      },
+      error: (err) => {
+        console.error('Error deleting favourite:', err);
+      }
     });
   }
-}*/
+}

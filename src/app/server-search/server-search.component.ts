@@ -88,7 +88,7 @@ export class ServerSearchComponent {
         error: (error) => {
           console.error('Error finding server:', error);
           this.serverStatus = null;
-          this.errorMessage = `No servers found matching "${this.serverAddress}". Try a different search term or enter exact server address.`;
+          this.errorMessage = `No online server found matching "${this.serverAddress}". Try again later or use direct IP address.`;
           this.searchInProgress = false;
         }
       });

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FavouritesService {
-  private apiUrl = 'http://localhost:5050/api/favourites';
+  private apiUrl = 'http://localhost:5050/api/favourites'; // Ensure this matches your backend URL
 
   constructor(private http: HttpClient) {}
 

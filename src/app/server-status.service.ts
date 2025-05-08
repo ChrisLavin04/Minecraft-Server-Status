@@ -48,6 +48,8 @@ export class ServerStatusService {
     (term: string) => `mc.${term}.net`,
     (term: string) => `${term}.minecrft.com`,
     (term: string) => `${term}.mcserver.us`,
+    (term: string) => `${term}.mc.gg`,
+    (term: string) => `play.${term}.co`,
   ];
 
   constructor(private http: HttpClient) {}

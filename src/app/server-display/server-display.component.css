@@ -1,59 +1,74 @@
 .server-display {
-    background-color: #8B4513;
-    padding: 1rem;
-    color: white;
-  }
-  
-  .server-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .more-results-btn {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
-  .server-details {
-    display: flex;
-    background-color: #555;
-    padding: 1rem;
-    border-radius: 4px;
-    gap: 1rem;
-  }
-  
-  .server-info {
-    flex: 1;
-  }
-  
-  .server-image {
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-  }
-  
-  .placeholder-image {
-    width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
-    color:black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .spacer {
-    height: 1rem;
-  }
-  
-  p {
-    margin: 0.5rem 0;
-  }
+  border: none;
+  border-radius: 10px;
+  background-color: #8B4513;
+  color: white;
+  overflow: hidden;
+}
+.hostname {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status {
+  font-size: 1.2rem;
+  color: #fff;
+  padding-right: 2em;
+}
+.server-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.server-info {
+  font-size: 1rem;
+}
+
+.progress {
+  background-color: #e9ecef;
+}
+
+.player-count-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+.motd-line {
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.placeholder-image {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  min-height: 200px;
+}
+
+/* Minecraft styling elements */
+.card-header, .btn-success {
+  background-color: #507D2A !important;
+  border-color: #507D2A !important;
+}
+
+.btn-outline-light:hover {
+  background-color: #507D2A !important;
+  border-color: #507D2A !important;
+}
+
+.card {
+  border: 2px solid #555 !important;
+}
+
+.server-display {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+}

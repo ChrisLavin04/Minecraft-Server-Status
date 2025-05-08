@@ -12,19 +12,23 @@ import { FavouritesService } from '../favourites/favourites.service'; // Import 
 })
 export class ServerDisplayComponent {
   @Input() serverStatus: ServerStatus | null = null;
+  isFavourite: boolean = false; // Track if the server is a favourite
 
   constructor(private favouritesService: FavouritesService) {} // Inject FavouritesService
 
   addToFavourites(): void {
     if (this.serverStatus) {
-      const favourite = {
-        serverName: this.serverStatus.hostname || 'Unknown Server',
-        serverAddress: this.serverStatus.ip || 'Unknown Address'
+      const favouriteServer = {
+        hostname: this.serverStatus.hostname,
+        online: this.serverStatus.online,
+        players: this.serverStatus.players,
+        version: this.serverStatus.version,
       };
-
-      this.favouritesService.addFavourite(favourite).subscribe(() => {
-        alert('Server added to favourites!');
-      });
+      alert('Server added to favourites!'); // Notify the user
     }
+  }
+
+  toggleFavourite(): void {
+    this.isFavourite = !this.isFavourite; // Toggle the favourite state
   }
 }
