@@ -1,6 +1,4 @@
-/**************************************************************************
-  * General Styling
- **************************************************************************/
+
  html, body {
   margin: 0;
   padding: 0;
@@ -23,9 +21,7 @@ app-root {
   display: block;
   width: 100%;
 }
-/**************************************************************************
-  * Button Styling
- **************************************************************************/
+
 button {
   cursor: pointer;
   border: none;
@@ -51,9 +47,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/**************************************************************************
-  * App Container Styling
- **************************************************************************/
+
 input {
   padding: 8px;
   border: 1px solid #ccc;
@@ -72,9 +66,7 @@ input {
   margin-bottom: 5px; /* Add spacing between the label and input */
 }
 
-/**************************************************************************
-  * Search Bar Styling
- **************************************************************************/
+
 .search-bar {
   width: 400px; /* Set a fixed width */
   padding: 12px 10px; /* Add vertical padding to align with the button */
@@ -99,9 +91,7 @@ input {
   margin: 0 auto; /* Center the container itself */
 }
 
-/**************************************************************************
-  * Button Group Styling
- **************************************************************************/
+
 .button-group {
   display: flex;
   justify-content: center; /* Center the buttons */

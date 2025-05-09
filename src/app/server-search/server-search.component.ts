@@ -18,11 +18,13 @@ export class ServerSearchComponent {
   errorMessage = '';
   discoveredAddress = '';
   serverType = '';
+  initialMessage = true;
 
   constructor(private serverStatusService: ServerStatusService) {}
 
   searchJava() {
     if (!this.serverAddress) return;
+    this.initialMessage = false;
     this.searchInProgress = true;
     this.errorMessage = '';
     
@@ -48,6 +50,7 @@ export class ServerSearchComponent {
 
   searchBedrock() {
     if (!this.serverAddress) return;
+    this.initialMessage = false;
     this.searchInProgress = true;
     this.errorMessage = '';
     
@@ -74,6 +77,7 @@ export class ServerSearchComponent {
   // Search for servers matching the term
   searchByTerm() {
     if (!this.serverAddress) return;
+    this.initialMessage = false;
     this.searchInProgress = true;
     this.errorMessage = '';
     

@@ -34,6 +34,15 @@
     margin-top: 1rem;
   }
   
+ .info-message {
+    background-image: url('../../assets/grass_bg.png');
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
   .error-message {
     background-color: #ffdddd;
     color: #d00;

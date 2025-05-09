@@ -15,7 +15,11 @@
       <button (click)="searchBedrock()" [disabled]="searchInProgress">Direct Bedrock Lookup</button>
     </div>
   </div>
-  
+
+  <div *ngIf="initialMessage" class="info-message">
+    <p>Search for a Minecraft server by its hostname or server name to get started.</p>
+  </div>
+
   <div *ngIf="searchInProgress" class="loading-indicator">
     <p>Searching for servers matching "{{serverAddress}}"...</p>
   </div>
@@ -30,3 +34,4 @@
 
   <app-server-display *ngIf="serverStatus" [serverStatus]="serverStatus"></app-server-display>
 </div>
+
