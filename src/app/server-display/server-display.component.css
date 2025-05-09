@@ -57,18 +57,17 @@
 /* Minecraft styling elements */
 .card-header, .btn-success {
   background-color: #507D2A !important;
-  border-color: #507D2A !important;
+  border-color: #507D2A;
 }
-
 .btn-outline-light:hover {
-  background-color: #507D2A !important;
-  border-color: #507D2A !important;
+  background-color: #507D2A;
+  border-color: #507D2A;
 }
 
 .card {
-  border: 2px solid #555 !important;
+  border: 2px solid #555;
 }
 
 .server-display {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
